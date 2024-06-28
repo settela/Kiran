@@ -1,0 +1,62 @@
+* {
+    margin: 1px;
+    padding: 0;
+}
+
+.top-right-corner {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+body {
+    background-image: url('bg_game_2.JPG'); /* Update this path to the location of your image */
+    background-size: cover; /* Adjusts the image to cover the entire page */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+    background-position: center center; /* Centers the background image */
+    height: 140vh; /* Ensures the body takes the full height of the viewport */
+    margin: 0; /* Removes default margin */
+}
+
+
+h2 {
+    text-align: center;
+    color: brown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.p1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align:left;
+    font-size: 15px;
+    color:red;
+}
+
+
+
+
+
+ .overall {
+    border-collapse: collapse;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+.overall th, .overall td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+}
+
+.overall th {
+    background-color: #df6565;
+}
+
+.overall table {
+    width: 80%; /* Ensure tables take full width of their container */
+    border-collapse: collapse; /* Collapses border so it looks cleaner */
+}

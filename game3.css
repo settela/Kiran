@@ -1,0 +1,163 @@
+* {
+    margin: 1px;
+    padding: 0;
+}
+.top-right-corner {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+body {
+    background-image: url('bg_game_2.JPG'); /* Update this path to the location of your image */
+    background-size: cover; /* Adjusts the image to cover the entire page */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+    background-position: center center; /* Centers the background image */
+    height: 170vh; /* Ensures the body takes the full height of the viewport */
+    margin: 0; /* Removes default margin */
+}
+
+h2,h6 {
+    text-align: center;
+    color: brown;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+div.content{
+    color:black;
+    font-size: 15px;
+}
+
+.p1,.p2,.p3,.p4,.p5,.p6,.p7,.p8,.p9{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.prpstepdemand {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+}
+
+.prpstepdemand > div {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid black /* Adds a vertical line between each table */
+}
+
+.prpstepdemand > div:last-child {
+    border-right: none; /* Removes the border from the last div */
+}
+
+.demandpattern {
+    margin-left: 20px; /* Adds space between the two tables */
+}
+
+.machinerent{
+    font-size: 12px;
+    border-collapse:collapse; /* Collapses border so it looks cleaner */
+    width: auto; /* Allow tables to adjust width according to content */
+    width: 80%; /* Ensure tables take full width of their container */
+    border-collapse: collapse; /* Collapses border so it looks cleaner */
+    text-align: center;
+    margin: 20px auto; /* Centers the div horizontally in its container */
+}
+
+/* input table */
+.Inputdetails_1 {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: perspective(500px) translateZ(50px);
+    transition: transform 0.3s ease-in-out;
+    width: 80vw; /* Adjust as needed */
+    margin: 20px auto; /* Centers the div horizontally in its container */
+    text-align: center;
+    border-radius: 10px;
+    background-color: #1380e6c2;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers children elements horizontally */
+}
+.input_1 {
+    width: 100%; /* Ensures table takes the full width of the div */
+    border-collapse: separate; /* Ensures borders are separated */
+    border-spacing: 2px; /* Adds space between table cells */
+}
+
+.input_1 th, .input_1 td {
+    border: none; /* Remove borders from table cells */
+    padding: 5px; /* Add padding for better spacing */
+    text-align: center; /* Center text in the cells */
+}
+
+#Submit_3 {
+    margin-top: 20px; /* Adds space between the table and the button */
+    padding: 10px 20px; 
+    width: auto; /* Automatically adjust width based on content */
+}
+
+#Submit_3:hover {
+    background-color: #2b607e; /* Change background color on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.header {
+    text-align: center;
+    font-size: 18px;
+    padding: 5px;
+    width: 100%;
+    position: relative;
+}
+
+/* performance table */
+.performance {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    border-top: 2px solid #000;
+    overflow-x: auto; /* Enable horizontal scrolling if necessary */
+}
+
+.performance > div {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid black /* Adds a vertical line between each table */
+}
+
+.performance > div:last-child {
+    border-right: none; /* Removes the border from the last div */
+}
+
+.weekdata, .cumulative, .prptable, .demandpattern, .weeklydata {
+    font-size: 12px;
+    border-collapse:collapse; /* Collapses border so it looks cleaner */
+    width: auto; /* Allow tables to adjust width according to content */
+}
+
+.weekdata {
+    width: 40%; /* Set the width for the first table */
+}
+
+.weeklydata{
+    width:60%;
+}
+
+.weekdata table, .cumulative table, .weeklydata table {
+    width: 80%; /* Ensure tables take full width of their container */
+    border-collapse: collapse; /* Collapses border so it looks cleaner */
+}
+
+.weekdata td, .weekdata th, .cumulative td, .cumulative th, .machinerent td, .machinerent th, .prptable th, .prptable td, .demandpattern th, .demandpattern td, .weeklydata th, .weeklydata td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid black; /* Add a border to each cell */
+    margin: -1px; /* Overlap the borders to remove spacing between cells */
+}
+
+.weekdata th, .cumulative th, .machinerent th, .prptable th, .demandpattern th, .weeklydata th {
+    background-color: #eb7171;
+}
+

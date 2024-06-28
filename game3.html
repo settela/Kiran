@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game_02</title>
+    <link rel="stylesheet" href="game3.css">
+</head>
+<body>
+    <div class="top-right-corner">stratg.in</div>
+        <h2>Introduction to the game</h2><br>
+        <b>Welcome to the game of supply chain planning</b><br>
+    <div class="content"><p class="p1">This month, the startup "DesiCola" decided to expand itself and is addding <b>two more SKU's </b>in their portfolio. The prepartion for all of the three SKUs will remain same with the exception in last step where different flavours will be added (delayed differentiation). The startup will prioritise the highest revenue generating SKU for preparation and serving as in the order <b>(DC_2 > DC_3 > DC_1: order of preference)</b>. The flavour addition will be done by one single machine only with different time taken for each SKUs. Also with the new process line setup, the entire prepration is done in four(4) steps.  The time taken  by these different process (in minutes per unit) as well as demand pattern is as below for different SKUs.
+    </p>
+
+     <div class="prpstepdemand">
+        
+        <table class="prptable">
+        <tr>
+            <th>SKU</th>
+            <th>Step_I</th>
+            <th>Step_II</th>
+            <th>Step_III</th>
+            <th>Step_IV</th>
+        </tr>
+        <tr>
+            <th>DC_1</th>
+            <td id="step1_dc_1"></td>
+            <td id="step2_dc_1"></td>
+            <td id="step3_dc_1"></td>
+            <td id="step4_dc_1"></td>
+        </tr>
+        <tr>
+            <th>DC_2</th>
+            <td id="step1_dc_2"></td>
+            <td id="step2_dc_2"></td>
+            <td id="step3_dc_2"></td>
+            <td id="step4_dc_2"></td>
+        </tr>
+        <tr>
+            <th>DC_3</th>
+            <td id="step1_dc_3"></td>
+            <td id="step2_dc_3"></td>
+            <td id="step3_dc_3"></td>
+            <td id="step4_dc_3"></td>
+        </tr>
+    </table>
+
+    <table class="demandpattern">
+        <tr>
+        <th>SKU</th>    
+        <th>Demand / Hour</th>  
+        <th>Standard Deviation / Hour </th>    
+        <th>Revenue/ Unit</th>
+        </tr>
+        <tr>
+            <th>DC_1</th>
+            <td id="demandperhour_dc_1"></td>
+            <td id="std_dc_1"></td>
+            <td id="revenueperunit_dc_1"></td>
+        </tr>
+        <tr>
+            <th>DC_2</th>
+            <td id="demandperhour_dc_2"></td>
+            <td id="std_dc_2"></td>
+            <td id="revenueperunit_dc_2"></td>
+        </tr>
+        <tr>
+            <th>DC_3</th>
+            <td id="demandperhour_dc_3"></td>
+            <td id="std_dc_3"></td>
+            <td id="revenueperunit_dc_3"></td>
+        </tr>
+       
+    </table>
+</div>
+    <p class="p2">Similar to last month, you have been entrusted with the responsibility of coming up with the machines required for each step. Machine once rented will be there for entire one week and any change in the count of mahcine can be made only at the end of the week. The cost of renting is as below(in Rs / week):</p>
+    <div class="machinerent">
+        <table class="machinerent">
+            <tr>
+                <th>Machines (Step Wise)</th>
+                <th>Machine_I (for step_I)</th>
+                <th>Machine_II (for step_II)</th>
+                <th>Machine_III (for step_III)</th>
+                <th>Machine_IV (for step_IV)</th>
+            </tr>
+            <tr>
+                <th>Rent(Rs / week)</th>
+                <td id="rent1"></td>
+                <td id="rent2"></td>
+                <td id="rent3"></td>
+                <td id="rent4"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="planning">
+        <p class="p3">
+            The performance will be measured on two parameters:<br> (a) Profit from selling:  Revenue (Units Sold * Revenue per unit) - Expense (from renting of machine) & <br>(b) Service Level = Order Served / Incoming Orders. <br> For the service level > 95%, the user will be rewarded as<b> [(service level-.95)* Revenue generated] in addition to (Revenue - Expense)</b>. Good Luck!! 
+        </p>
+        </p>
+    </div>
+    <div class="Inputdetails_1">
+        <p class="p4">Enter the count of type of machine  to be rented for:</p>  
+        <table class="input_1">
+            <tr>
+                <th>Machine / Process</th>
+                <th>Machine I</th>
+                <th>Machine II</th>
+                <th>Machine III</th>
+                <th>Machine IV</th>
+            </tr>
+            <tr>
+                <td id="week">Week_9</td>
+                <td id="mc1"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc2"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc3"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc4"><input type="number" min="1" placeholder="Enter > 0"></td>
+            </tr>
+        </table>
+        <input type="button" value="Submit" id="Submit_3">
+        </div>
+   
+        <!-- aftersubmissting each day data, the same will be captured and displayed here-->
+        <h6 class="header">Performance Overview</h6>
+        <div class="performance">
+        <div class="weekdata"> <p class="p5"><b>Weekly Performance</b></p>
+            <table id="orderserved">
+                <tr>
+                    <th>OrderServed</th>
+                    <th>Week_09</th>
+                    <th>Week_10</th>
+                    <th>Week_11</th>
+                    <th>Week_12</th>
+                </tr>
+                <tr>
+                    <th>DC_1</th>
+                    <td id="os_dc_1_1"></td>
+                    <td id="os_dc_1_2"></td>
+                    <td id="os_dc_1_3"></td>
+                    <td id="os_dc_1_4"></td>
+                </tr>
+                <tr>
+                    <th>DC_2</th>
+                    <td id="os_dc_2_1"></td>
+                    <td id="os_dc_2_2"></td>
+                    <td id="os_dc_2_3"></td>
+                    <td id="os_dc_2_4"></td>
+                </tr>
+                <tr>
+                    <th>DC_3</th>
+                    <td id="os_dc_3_1"></td>
+                    <td id="os_dc_3_2"></td>
+                    <td id="os_dc_3_3"></td>
+                    <td id="os_dc_3_4"></td>
+                </tr>
+            </table>
+            </div>
+            <div class="weeklydata">
+                <table id="weeklydata">
+                    <tr>
+                        <th>Performance</th>
+                        <th>Week_9</th>
+                        <th>Week_10</th>
+                        <th>Week_11</th>
+                        <th>Week_12</th>
+                    </tr>
+                    <tr>
+                        <th>Incoming Order</th>
+                        <td id="incomingorder3_1"></td>
+                        <td id="incomingorder3_2"></td>
+                        <td id="incomingorder3_3"></td>
+                        <td id="incomingorder3_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Total Served</th>
+                        <td id="orderserved3_1"></td>
+                        <td id="orderserved3_2"></td>
+                        <td id="orderserved3_3"></td>
+                        <td id="orderserved3_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Revenue</th>
+                        <td id="revenue3_1"></td>
+                        <td id="revenue3_2"></td>
+                        <td id="revenue3_3"></td>
+                        <td id="revenue3_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Expense</th>
+                        <td id="expense3_1"></td>
+                        <td id="expense3_2"></td>
+                        <td id="expense3_3"></td>
+                        <td id="expense3_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Profit</th>
+                        <td id="profit3_1"></td>
+                        <td id="profit3_2"></td>
+                        <td id="profit3_3"></td>
+                        <td id="profit3_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Service %</th>
+                        <td id="service3_1"></td>
+                        <td id="service3_2"></td>
+                        <td id="service3_3"></td>
+                        <td id="service3_4"></td>
+                    </tr>
+                </table>  
+            </div>
+            <div class="cumulative"> <p class="p6"><b>Cumulative Performance</b></p>
+                <table id="cumulativeper">
+                   <tr>
+                    <th>Revenue</th>
+                    <th>Expense</th>
+                    <th>Profit</th>
+                   </tr>
+                    <tr>
+                        <td id="cumulativeRevenue">$$$</td>
+                        <td id="cumulativeExpense">$$</td>
+                        <td id="cumulativeProfit">$$</td>
+                    </tr>
+                </table>
+            </div>
+        </div> 
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.4/jstat.min.js"></script>
+<script src="game3.js"></script>              
+</body>
+</html>

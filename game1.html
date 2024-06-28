@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Month_1_Process Balancing</title>
+    <link rel="stylesheet" href="game1.css">
+</head>
+<body>
+    <div class="top-right-corner">stratg.in</div>
+        <h2>Introduction to the game</h2><br>
+        <b>Welcome to the game of supply chain planning</b><br>
+    <div class="content"><p class="p1">As part of summer project, you decided to work together with your friend who is launching his own flavoured cola drink startup <b>"DesiCola"</b>. The startup "DesiCola" will be launching only one SKU "DC_1" in the first month.  The prepartion of this requires 5(five) steps which would be done by 5(five) differnet machines as Step _1 by M_1, Step_2 by M_2 and so on. The time required for each process on machines are mentioned below(in minutes per unit). The operational hours for the company would be 6(six) hours a day and 6(six) days a week. Also the projected demand for this is as below:</p>
+<br>
+        <div class="prpstepdemand">
+        
+            <table class="prptable">
+            <tr>
+                <th>SKU</th>
+                <th>Step_I (M_1)</th>
+                <th>Step_II (M_2)</th>
+                <th>Step_III (M_3)</th>
+                <th>Step_IV (M_4)</th>
+                <th>Step_V (M_5)</th>
+            </tr>
+            <tr>
+                <th>DC_1</th>
+                <td id="step1"></td>
+                <td id="step2"></td>
+                <td id="step3"></td>
+                <td id="step4"></td>
+                <td id="step5"></td>
+            </tr>
+        </table>
+
+        <table class="demandpattern">
+            <tr>
+            <th>SKU</th>          
+            <th>Demand / hour </th>
+            <th>Standard deviation / hour</th>
+            <th>Revenue / unit </th>
+            </tr>
+            <tr>
+                <th>DC_1 </th>
+                <td id="demandperhour"></td>
+                <td id="stdperhour"></td>
+                <td id="revenueperunit"></td>
+            </tr>
+        </table>
+        </div>
+
+        <br>
+    <p class="p2">You have been entrusted with the process design primarily with regard to planning of machine to be required. The startup after analysis have decided to rent the machines for all the five steps, assigning you the responsibility to come up with the requisite numbers. Machine once rented will be there for entire one week and any change in the count of mahcine can be made only at the end of the week. The cost of renting is as below(in Rs / week):</p>
+      <br>  <div class="machinerent">
+            <table class="machinerent">
+                <tr>
+                    <th>Machines (Step Wise)</th>
+                    <th>Machine_I (for step_I)</th>
+                    <th>Machine_II (for step_II)</th>
+                    <th>Machine_III (for step_III)</th>
+                    <th>Machine_IV (for step_IV)</th>
+                    <th>Machine_V (for step_V)</th>
+                </tr>
+                <tr>
+                    <th>Rent(Rs / day)</th>
+                    <td id="rent1"></td> 
+                    <td id="rent2"></td>
+                    <td id="rent3"></td>
+                    <td id="rent4"></td>
+                    <td id="rent5"></td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <div class="planning">
+            <p class="p3">
+               The performance will be measured on two parameters:<br> (a) Profit from selling:  Revenue (Units Sold * Revenue per unit) - Expense (from renting of machine) & <br>(b) Service Level = Order Served / Incoming Orders. <br> For the service level > 95%, the user will be rewarded as<b> [(service level-.95)* Revenue generated] in addition to (Revenue - Expense)</b>. Good Luck!! 
+            </p>
+        </div>
+
+        <div class="Inputdetails_1">
+        <p class="p4">Enter the count of type of machine  to be rented for:</p>  <br>
+        <table class="input_1">
+            <tr>
+                <th>Process/Machine</th>
+                <th>Machine I</th>
+                <th>Machine II</th>
+                <th>Machine III</th>
+                <th>Machine IV</th>
+                <th>Machine V</th>
+            </tr>
+            <tr>
+                <td id="week"><b>Week_1</b></td>
+                <td id="mc1"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc2"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc3"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc4"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc5"><input type="number" min="1" placeholder="Enter > 0"></td>
+            </tr>
+        </table>
+        <input type="button" value="Submit" id="Submit_1">
+        
+        </div>
+
+
+        <!-- aftersubmissting each day data, the same will be captured and displayed here-->
+        <h6 class="header">Performance Overview</h6>
+        <div class="performance">
+        <div class="weekdata"> <p class="p5"><b>Weekly Performance</b></p>
+                <table id="weeklydata">
+                    <tr>
+                        <th>Performance</th>
+                        <th>Week_01</th>
+                        <th>Week_02</th>
+                        <th>Week_03</th>
+                        <th>Week_04</th>
+                    </tr>
+                    <tr>
+                        <th>Incoming Order</th>
+                        <td id="incomingorder1"></td>
+                        <td id="incomingorder2"></td>
+                        <td id="incomingorder3"></td>
+                        <td id="incomingorder4"></td>
+                    </tr>
+                    <tr>
+                        <th>Order Served</th>
+                        <td id="orderserved1"></td>
+                        <td id="orderserved2"></td>
+                        <td id="orderserved3"></td>
+                        <td id="orderserved4"></td>
+                    </tr>
+                    <tr>
+                        <th>Weekly Revenue</th>
+                        <td id="revenue1"></td>
+                        <td id="revenue2"></td>
+                        <td id="revenue3"></td>
+                        <td id="revenue4"></td>
+
+                    </tr>
+                    <tr>
+                        <th>Weekly Expense</th>
+                        <td id="expense1"></td>
+                        <td id="expense2"></td>
+                        <td id="expense3"></td>
+                        <td id="expense4"></td>
+                    </tr>
+                    <tr>
+                        <th>Weekly Profit</th>
+                        <td id="profit1"></td>
+                        <td id="profit2"></td>
+                        <td id="profit3"></td>
+                        <td id="profit4"></td>
+                    </tr>
+                    <tr>
+                        <th>Weekly Service %</th>
+                        <td id="service1"></td>
+                        <td id="service2"></td>
+                        <td id="service3"></td>
+                        <td id="service4"></td>
+                    </tr>
+                </table>  
+            </div>
+            <div class="cumulative"> <p class="p6"><b>Cumulative Performance</b></p>
+                <table id="cumulativeper">
+                   <tr>
+                    <th>Cumulative Revenue</th>
+                    <th>Cumulative Expense</th>
+                    <th>Cumulative Profit</th>
+                   </tr>
+                    <tr>
+                        <td id="cumulativeRevenue">$$$</td>
+                        <td id="cumulativeExpense">$$</td>
+                        <td id="cumulativeProfit">$$</td>
+                    </tr>
+                </table>
+            </div>
+        </div>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.4/jstat.min.js"></script>
+<script src="game1.js"></script>         
+</body>
+</html>

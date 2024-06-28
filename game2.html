@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game_02_Mix</title>
+    <link rel="stylesheet" href="game2.css">
+</head>
+<body>
+    <div class="top-right-corner">stratg.in</div>
+        <h2>Introduction to the game</h2><br>
+        <b>Welcome to game of supply chain planning</b><br>
+    <div class="content"><p class="p1">With the new machine available in the market, the machines used in step III and step IV can be done by one single machine. The time taken for all the steps is as below(in minutes per unit). Also, the startup "DesiCola" will be doing marketing of their product, leading to incrase in overall demand for their SKU DC_01 as per below table:
+    </p>
+    <div class="prpstepdemand">
+        
+        <table class="prptable">
+        <tr>
+            <th>SKU</th>
+            <th>Step_I</th>
+            <th>Step_II</th>
+            <th>Step_III</th>
+            <th>Step_IV</th>
+            <th>Combined Machine(III & IV)</th>
+            <th>Step_V</th>
+        </tr>
+        <tr>
+            <th>DC_1</th>
+            <td id="step1"></td>
+            <td id="step2"></td>
+            <td id="step3"></td>
+            <td id="step4"></td>
+            <td id="stepcombined"></td>
+            <td id="step5"></td>
+        </tr>
+    </table>
+
+    <table class="demandpattern">
+        <tr>
+            <th>SKU</th>          
+            <th>Demand / hour </th>
+            <th>Standard deviation / hour</th>
+            <th>Revenue / unit </th>
+            </tr>
+        <tr>
+            <th>DC_1 </th>
+            <td id="demandperhour"></td>
+            <td id="stdperhour"></td>
+            <td id="revenueperunit"></td>
+        </tr>
+    </table>
+    </div>
+    <br>
+    <p class="p2">Similar to last month, this month also you are entrusted to plan for the count of machines to be rented for planning. Machine once rented will be there for entire one week and any change in the count of machine can be made only at the end of the week. The cost of renting is as below (in Rs / week):<br><br>
+    </p>
+    <div class="machinerent">
+        <table class="machinerent">
+            <tr>
+                <th>Machines (Step Wise)</th>
+                <th>Machine_I (for step_I)</th>
+                <th>Machine_II (for step_II)</th>
+                <th>Machine_III (for step_III)</th>
+                <th>Machine_IV (for step_IV)</th>
+                <th>Combined (for step III & IV)</th>
+                <th>Machine_V (for step_V)</th>
+            </tr>
+            <tr>
+                <th>Rent (Rs / week)</th>
+                <td id="rent1"></td>
+                <td id="rent2"></td>
+                <td id="rent3"></td>
+                <td id="rent4"></td>
+                <td id="rentcombined"></td>
+                <td id="rent5"></td>
+            </tr>
+        </table>
+    </div>
+    <br>
+    <div class="planning">
+        <p class="p3">
+            The performance will be measured on two parameters:<br> (a) Profit from selling:  Revenue (Units Sold * Revenue per unit) - Expense (from renting of machine) & <br>(b) Service Level = Order Served / Incoming Orders. <br> For the service level > 95%, the user will be rewarded as<b> [(service level-.95)* Revenue generated] in addition to (Revenue - Expense)</b>. Good Luck!! 
+        </p>
+    </div>
+    <div class="Inputdetails_1">
+        <p class="p4">Enter the count of type of machine  to be rented for:</p>  <br>
+        <table class="input_1">
+            <tr>
+                <th>Process/Machine</th>
+                <th>Machine I</th>
+                <th>Machine II</th>
+                <th>Machine III</th>
+                <th>Machine IV</th>
+                <th>Combined (III & IV)</th>
+                <th>Machine V</th>
+            </tr>
+            <tr>
+                <td id="week"><b>Week_5</b></td>
+                <td id="mc1"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc2"><input type="number" min="1" placeholder="Enter > 0"></td>
+                <td id="mc3"><input type="number" min="1"></td>
+                <td id="mc4"><input type="number" min="1"></td>
+                <td id="mccombined"><input type="number" min="1"></td>
+                <td id="mc5"><input type="number" min="1" placeholder="Enter > 0"></td>
+            </tr>
+        </table>
+        <input type="button" value="Submit" id="Submit_2">
+        </div>
+        <br><br>
+        <!-- aftersubmissting each day data, the same will be captured and displayed here-->
+        <h6 class="header">Performance Overview</h6>
+        <div class="performance">
+        <div class="weekdata"> <p class="p5"><b>Weekly Performance</b></p>
+                <table id="weeklydata">
+                    <tr>
+                        <th>Performance</th>
+                        <th>Week_05</th>
+                        <th>Week_06</th>
+                        <th>Week_07</th>
+                        <th>Week_08</th>
+                    </tr>
+                    <tr>
+                        <th>Incoming Order</th>
+                        <td id="incomingorder2_1"></td>
+                        <td id="incomingorder2_2"></td>
+                        <td id="incomingorder2_3"></td>
+                        <td id="incomingorder2_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Order Served</th>
+                        <td id="orderserved2_1"></td>
+                        <td id="orderserved2_2"></td>
+                        <td id="orderserved2_3"></td>
+                        <td id="orderserved2_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Revenue</th>
+                        <td id="revenue2_1"></td>
+                        <td id="revenue2_2"></td>
+                        <td id="revenue2_3"></td>
+                        <td id="revenue2_4"></td>
+
+                    </tr>
+                    <tr>
+                        <th>Expense</th>
+                        <td id="expense2_1"></td>
+                        <td id="expense2_2"></td>
+                        <td id="expense2_3"></td>
+                        <td id="expense2_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Profit</th>
+                        <td id="profit2_1"></td>
+                        <td id="profit2_2"></td>
+                        <td id="profit2_3"></td>
+                        <td id="profit2_4"></td>
+                    </tr>
+                    <tr>
+                        <th>Weekly Service %</th>
+                        <td id="service2_1"></td>
+                        <td id="service2_2"></td>
+                        <td id="service2_3"></td>
+                        <td id="service2_4"></td>
+                    </tr>
+                </table>  
+            </div>
+            <div class="cumulative"> <p class="p6"><b>Cumulative Performance</b></p>
+                <table id="cumulativeper">
+                   <tr>
+                    <th>Revenue</th>
+                    <th>Expense</th>
+                    <th>Profit</th>
+                   </tr>
+                    <tr>
+                        <td id="cumulativeRevenue">$$$</td>
+                        <td id="cumulativeExpense">$$</td>
+                        <td id="cumulativeProfit">$$</td>
+                    </tr>
+                </table>
+            </div>
+        </div>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.4/jstat.min.js"></script>
+<script src="game2.js"></script>            
+</body>
+</html>

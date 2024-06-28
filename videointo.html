@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+    body {
+    background-image: url('background.JPG'); /* Update this path to the location of your image */
+    background-size: cover; /* Adjusts the image to cover the entire page */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+    background-position: center center; /* Centers the background image */
+    height: 100vh; /* Ensures the body takes the full height of the viewport */
+    margin: 0; /* Removes default margin */
+    }
+
+        .top-right-corner {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 16px;
+        font-weight: bold;
+        }
+
+        .welcome-message {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333; /* You can change this color to fit your theme */
+            text-shadow: 1px 1px 2px #fff; /* Optional: adds a little shadow for better readability */
+        }
+
+        .video-container {
+            margin-bottom: 20px;
+        }
+        .proceed-link {
+            display: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .proceed-link:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-right-corner">stratg.in</div>
+    <div class="welcome-message">Welcome to Supply Chain Planning</div>
+    <div class="video-container">
+        <video id="myVideo" width="840" height="360" controls>
+            <source src="DesiCola.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <a id="proceedLink" class="proceed-link" href="game1.html">Proceed to Game</a>
+
+    <script>         
+       
+        // Get video element and link element
+        var video = document.getElementById('myVideo');
+        var proceedLink = document.getElementById('proceedLink');
+
+        // Event listener for video end
+        video.addEventListener('ended', function() {
+            // Show the proceed link
+            proceedLink.style.display = 'block';
+        });
+
+
+    </script>
+</body>
+</html>
