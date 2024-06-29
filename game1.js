@@ -117,8 +117,59 @@ document.addEventListener('DOMContentLoaded', function() {
             proceedLink.style.backgroundColor = '#000000'; // Set link background color
             proceedLink.style.borderRadius = '5px'; // Add rounded corners to link
        
-            
+            proceedToNextMonth()
         }
+        
+        async function proceedToNextMonth() {
+            try {
+                // Fetch the Excel file from remote URL
+                const response = await fetch('gamebook.xlsx');
+        
+                if (!response.ok) {
+                    throw new Error('Failed to fetch Excel file');
+                }
+        
+                const arrayBuffer = await response.arrayBuffer();
+                const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+        
+                // Get the worksheet by name (adjust as needed)
+                const worksheet = workbook.Sheets['Sheet1']; // Replace 'Sheet1' with your sheet name
+        
+                // Convert the worksheet to JSON
+                const data = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+        
+                // Add the new data to the worksheet
+                data.push([cumulativeRevenue, cumulativeExpense, cumulativeProfit]); // Example: Storing revenue, expense, profit
+        
+                // Convert JSON back to worksheet
+                const newWorksheet = XLSX.utils.aoa_to_sheet(data);
+        
+                // Replace the old worksheet with the new one
+                workbook.Sheets['Sheet1'] = newWorksheet; // Replace 'Sheet1' with your sheet name
+        
+                // Write the workbook back to an array buffer
+                const updatedArrayBuffer = XLSX.write(workbook, { type: 'array', bookType: 'xlsx' });
+        
+                // Save the updated Excel file back to remote URL
+                const saveResponse = await fetch('gamebook.xlsx', {
+                    method: 'PUT', // Adjust the method as per your server's API
+                    headers: {
+                        'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+                    },
+                    body: updatedArrayBuffer,
+                });
+        
+                if (!saveResponse.ok) {
+                    throw new Error('Failed to save Excel file');
+                }
+        
+                console.log('Details stored in remote Excel file successfully');
+            } catch (error) {
+                console.error('Error storing details in remote Excel file:', error);
+                // Handle errors as needed
+            }
+        }
+        
         document.getElementById('mc1').querySelector('input').value = ''; // Clear mc1 input field
         document.getElementById('mc2').querySelector('input').value = ''; // Clear mc2 input field
         document.getElementById('mc3').querySelector('input').value = ''; // Clear mc3 input field

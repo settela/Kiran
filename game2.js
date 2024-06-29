@@ -42,9 +42,18 @@ let orderserved = 0
 let revenue = 0 
 let expense =0
 let profit = 0
-let cumulativeRevenue = localStorage.getItem( "cumulativeRevenue");
-let cumulativeExpense = localStorage.getItem( "cumulativeExpense");; // Initialize cumulative revenue
-let cumulativeProfit = localStorage.getItem( "cumulativeProfit");; // Initialize cumulative revenue
+let cumulativeRevenue = parseInt(localStorage.getItem("cumulativeRevenue")) || 0;
+let cumulativeExpense = parseInt(localStorage.getItem("cumulativeExpense")) || 0;
+let cumulativeProfit = parseInt(localStorage.getItem("cumulativeProfit")) || 0;
+// Find the elements where the values will be displayed
+let revenueElement = document.getElementById("cumulativeRevenue");
+let expenseElement = document.getElementById("cumulativeExpense");
+let profitElement = document.getElementById("cumulativeProfit");
+
+// Set the text content of the elements to the values
+revenueElement.textContent = cumulativeRevenue;
+expenseElement.textContent = cumulativeExpense;
+profitElement.textContent = cumulativeProfit;
 let count = 0; // Initialize count
 let randomdemand = 0;
 let service = 0
@@ -118,6 +127,9 @@ document.addEventListener('DOMContentLoaded', function() {
             let proceedLink = document.createElement('a');
             proceedLink.textContent = 'Proceed to Month_03'; // Set link text
             proceedLink.href = 'game3.html'; // Replace with the actual path to your new page
+            localStorage.setItem('cumulativeRevenue', cumulativeRevenue);//passing values to the second month 
+            localStorage.setItem('cumulativeExpense', cumulativeExpense);//passing values to the second month 
+            localStorage.setItem('cumulativeProfit', cumulativeProfit);//passing values to the second month 
 
             // Append the link to the document body
             document.body.appendChild(proceedLink);
